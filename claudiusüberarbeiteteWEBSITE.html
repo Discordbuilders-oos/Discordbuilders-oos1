@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über mich</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+    }                       
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hamburger Menü */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background-color: #f4f4f4;
+      margin-top: 60px; /* wegen fester Leiste */
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #555;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigationsleiste -->
+  <nav>
+    <div class="logo">Claudius</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">Über mich</a>
+      <a href="#links">Links</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+  </nav>
+  <header>
+    <h1>👋 Hallo, ich bin Claudius!</h1>
+    <p class="subtitle"> Developer & Discord Developer </p>
+  </header>
+
+  <section id="about">
+    <h2>Über mich</h2>
+    <p>
+      Ich bin ein erfahrener Developer, ich arbeite gerne mit Node.js, HTML für meine Websites
+      und CSS für das Design von Websites. 
+    </p>
+    <p>
+      In meiner Freizeit Code ich gerne und bearbeite Videos mit After Effects und Premiere Pro.
+    <!-- Navigation erweitern -->
+<div class="nav-links" id="nav-links">
+  <a href="#about">Über mich</a>
+  <a href="#projects">Projekte</a> <!-- neu -->
+  <a href="#links">Links</a>
+  <a href="#contact">Kontakt</a>
+</div>
+
+<!-- Neue Section einfügen -->
+<section id="projects">
+  <h2>Aktuelle Projekte</h2>
+  <p>Hier findest du eine Übersicht meiner aktuellen Projekte.</p>
+  <ul>
+    <li><strong>Projekt 1:</strong> Eins meiner Aktuellen projekte ist mein eigener discord bot der ein moderations 
+    system und halt ein  All in one bot der ticket systeme wilkommensmodule und ein verifzierungs system haben.Der bot
+    soll bald für alle zugänglich sein.
+
+
+    </p>
+  </section>
+  <section id="links">
+  <h2>Finde mich online</h2>
+  <ul>
+    <li><a href="#">💼 Kontakt</a></li>
+    <li><a href="https://www.youtube.com/@Toxicblaze-f9q/shorts" target="_blank">📸 YouTube</a></li>
+  </ul>
+</section>
+
+
+
+  <footer>
+    <p>© 2025 Claudius Developer</p>
+  </footer>
+
+  <!-- Script für das mobile Menü -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Menü automatisch schließen nach Klick
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
+<div class="logo"></div>
